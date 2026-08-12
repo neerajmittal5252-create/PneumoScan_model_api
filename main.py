@@ -24,3 +24,7 @@ async def predict(file: UploadFile = File(...)):
         "score": score,
         "class": "class_1" if score > 0.5 else "class_0"
     }
+    
+@app.get("/health")
+def health():
+    return {"status": "ok"}
